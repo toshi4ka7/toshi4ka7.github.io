@@ -1,0 +1,204 @@
+/* сброс стилей браузера */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.2;
+}
+ol { 
+	padding-left: 1.4em;
+	list-style: decimal;
+}
+ul {
+	padding-left: 1.4em;
+	list-style: square;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.menu .menuChoose {
+	background-color: #fff; 
+	border-bottom: none;  
+}
+/* конец кода сброса стилей браузера */
+
+
+.module {
+	width: 100%;
+	max-width: 250px;
+	margin: 10px;
+	border: 2px solid #ccc;  /* csscolor.ru */
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.menu {
+	margin-bottom: 10px;
+	list-style: none;
+	padding: 0;
+}
+.menu li {
+	float: left;
+	padding: 10px 0;
+	width: 33%;
+	text-align: center;
+	border-right: 1px solid #ccc; 
+	border-bottom: 1px solid #ccc;
+	background-color: #ebebeb;
+	cursor: pointer;   
+}
+.menu li:last-child {
+	border-right: none;
+}
+
+
+.display {
+	margin-bottom: 10px;
+	list-style: none;
+	padding: 0;
+}
+.display li {
+	float: left;
+	padding: 4px 0;
+	width: 33%;
+	text-align: center;
+	border-right: 1px solid #ccc;  
+}
+.display li:first-child span {
+	background-color: #ffc130;
+	padding: 3px 7px;
+	border-radius: 10px;
+	text-align: center;
+}
+.display li:nth-child(2) span {
+	background-color: #ffc130;
+	padding: 3px 7px;
+	border-radius: 10px;
+	text-align: center;
+}
+.display li:last-child {
+	border-right: none;
+	cursor: pointer;
+}
+.display li:last-child span {
+	border: 1px solid #bdbdbd;
+	padding: 4px 10px;
+	border-radius: 10px;
+}
+
+
+.setting {
+	width: 100%;
+	border-top: 1px solid #ccc; 
+	padding: 10px;
+	box-sizing: border-box;
+	display: none;
+}
+.setting > input {
+	width: 90%;
+	margin-left: 5px;
+}
+.setting p {
+	padding: 5px 5px 0 5px;
+}
+.setting p label {
+    width: 32px;
+    height: 26px;
+    display: inline-block;
+    position: relative;
+    padding-left: 27px;
+}
+.setting p input[type="checkbox"] + span {
+    position: absolute;
+    left: 27px; top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(switch.png) no-repeat;
+    cursor: pointer;
+}
+.setting p input[type="checkbox"]:checked + span {
+    background-position: 0 -26px; 
+}
+.setting > span {
+	padding: 5px 0 5px 10px;
+	border: 1px solid #bdbdbd;
+	margin-top: 10px;
+	display: inline-block;
+	width: 55%;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+
+
+textarea {
+	width: 100%;
+	height: 250px;
+	border: none;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+	display: none;
+}
+
+table {
+	width: 100%;
+}
+tr {
+	border: 1px solid #ccc;
+	border-right: none;
+	border-left: none; 
+}
+tr:last-child {
+	background-color: #bcfc97;
+	border-bottom: none; 
+}
+tr:last-child span {
+	background-color: #ffc130;
+	padding: 3px 7px;
+	border-radius: 10px;
+	text-align: center; 
+}
+tr:last-child:hover {
+	background-color: #bcfc97;
+}
+tr:hover {
+	background-color: yellow;
+}
+td {
+	padding: 10px;
+}
+td:first-child {
+	width: 80%;
+}
+td:last-child {
+	width: 20%;
+}
+.choose {
+	background-color: #ebebeb;
+}
+.chooseSpan {
+	background-color: #ffd4d4;
+}
+
+.product2 {
+	display: none;
+}
+.product3 {
+	display: none;
+}
