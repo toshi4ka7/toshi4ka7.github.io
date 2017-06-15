@@ -1,6 +1,7 @@
 CACHE MANIFEST
-# appGoods версия 1.0.1
+# appGoods версия 1.0.2
 index.html
 js/jquery-3.2.1.min.js
 js/script.js
+css/main.css
 
