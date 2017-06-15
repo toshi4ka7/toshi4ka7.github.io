@@ -44,13 +44,34 @@ $(function() {
 
 
 	/* Обновление приложения */
-	applicationCache.onupdateready = function() {
-		var reload = confirm("Доступна новая версия приложения, которая будет использована при следующем запуске. Хотите ли перезапустить ее сейчас?");
-		if (reload) location.reload();
+	window.applicationCache.onchecking = function() {
+		alert("Проверка наличия новой версии");
+		return false;
 	}
-
-
-
+	window.applicationCache.onnoupdate = function() {
+		alert("Версия приложения не изменилась");
+		return false;
+	}
+	window.applicationCache.ondownloading = function() {
+		alert("Загружается новая версия");
+		return false;
+	}
+	window.applicationCache.oncached = function() {
+		alert("Приложение загружено и установлено локально");
+		return false;
+	}
+	window.applicationCache.onupdatereagy = function() {
+		alert("Была загружена новая версия приложения. Перезапустите его.");
+		return false;
+	}
+	window.applicationCache.onerror = function() {
+		alert("Невозможно загрузить файл объявления или сохранить приложение в кэш");
+		return false;
+	}
+	window.applicationCache.onobsolete = function() {
+		alert("Это приложение больше не кэшируется. Перезапустите его, чтобы получить последнюю версию из сети");
+		return false;
+	}
 
 	/* Работа приложения */
 
