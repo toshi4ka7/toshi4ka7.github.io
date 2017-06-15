@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" manifest="index.appcache">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="appGoods">
+
+		<div class="notification">
+			<i class="fa fa-wifi" aria-hidden="true"></i>
+			<span>Сообщение</span>
+			<i class="fa fa-cog" aria-hidden="true"></i>
+		</div>
+
+		<div class="settings">
+			<input type="range" min="-1" max="1" step="1" value="0">
+			<p>Опускать строки вниз:<input type="checkbox"></p>
+			<p>Скрывать строки:<input type="checkbox"></p>
+		</div>
+
+		<div class="content">
+			<ul class="navigator clearfix">
+				<li data-page="page1"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></li>
+				<li data-page="page2"><i class="fa fa-cart-plus" aria-hidden="true"></i></li>
+				<li data-page="page3"><i class="fa fa-shopping-bag" aria-hidden="true"></i></li>
+			</ul>
+
+			<div class="page1 page">
+				<ul class="display clearfix">
+					<li><i class="fa fa-shopping-cart" aria-hidden="true"></i><span> 5</span></li>
+					<li><i class="fa fa-money" aria-hidden="true"></i><span>  10,76</span></li>
+					<li><i class="fa fa-file-text" aria-hidden="true"></i></li>
+				</ul>
+				<textarea data-page="page1"></textarea>
+				<table>
+					<tr>
+						<td>Молоко</td>
+						<td>0,95</td>
+					</tr>
+					<tr>
+						<td>Хлеб</td>
+						<td>1,05</td>
+					</tr>
+					<tr>
+						<td>Макароны</td>
+						<td>1,65</td>
+					</tr>
+					<tr>
+						<td>Мясо</td>
+						<td>4,05</td>
+					</tr>
+					<tr>
+						<td>Пельмени</td>
+						<td>2,80</td>
+					</tr>
+					<tr>
+						<td>Яблоки</td>
+						<td>2,95</td>
+					</tr>
+					<tr>
+						<td>Огурцы</td>
+						<td>3,86</td>
+					</tr>
+					<tr>
+						<td>Печенье</td>
+						<td>2,45</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div class="page2 page">
+				<ul class="display clearfix">
+					<li><i class="fa fa-shopping-cart" aria-hidden="true"></i><span> 10</span></li>
+					<li><i class="fa fa-money" aria-hidden="true"></i><span>  25,15</span></li>
+					<li><i class="fa fa-file-text" aria-hidden="true"></i></li>
+				</ul>
+				<textarea data-page="page2"></textarea>
+				<table>
+					<tr>
+						<td>Молоко</td>
+						<td>0,95</td>
+					</tr>
+					<tr>
+						<td>Хлеб</td>
+						<td>1,05</td>
+					</tr>
+					<tr>
+						<td>Макароны</td>
+						<td>1,65</td>
+					</tr>
+					<tr>
+						<td>Мясо</td>
+						<td>4,05</td>
+					</tr>
+					<tr>
+						<td>Яблоки</td>
+						<td>2,95</td>
+					</tr>
+				</table>
+				
+			</div>
+
+			<div class="page3 page">
+				<ul class="display clearfix">
+					<li><i class="fa fa-shopping-cart" aria-hidden="true"></i><span> 15</span></li>
+					<li><i class="fa fa-money" aria-hidden="true"></i><span>  44,96</span></li>
+					<li><i class="fa fa-file-text" aria-hidden="true"></i></li>
+				</ul>
+				<textarea data-page="page3"></textarea>
+				<table>
+					<tr>
+						<td>Макароны</td>
+						<td>1,65</td>
+					</tr>
+					<tr>
+						<td>Мясо</td>
+						<td>4,05</td>
+					</tr>
+					<tr>
+						<td>Яблоки</td>
+						<td>2,95</td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+		
+
+	</div>
+</body>
+</html>
