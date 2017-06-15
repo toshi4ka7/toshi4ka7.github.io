@@ -43,6 +43,15 @@ $(function() {
 	})
 
 
+	/* Обновление приложения */
+	applicationCache.onupdateready = function() {
+		var reload = confirm("Доступна новая версия приложения, которая будет использована при следующем запуске. Хотите ли перезапустить ее сейчас?");
+		if (reload) location.reload();
+	}
+
+
+
+
 	/* Работа приложения */
 
 	var label = ' +';
