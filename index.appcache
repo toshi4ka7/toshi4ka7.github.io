@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# appGoods v 1.0
+# appGoods v 1.1.1
 index.html
 js/jquery-3.2.1.min.js
 js/script.js
@@ -9,8 +9,8 @@ img/settings-work-tool.svg
 img/wifi-symbol.svg
 img/money.svg
 img/shopping-cart.svg
-img/one-page.svg
-img/two-page.svg
-img/tree-page.svg
+img/one-page-3.svg
+img/two-page-3.svg
+img/tree-page-3.svg
 
 
