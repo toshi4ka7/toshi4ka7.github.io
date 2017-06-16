@@ -16,7 +16,17 @@ $(function() {
 				'transition': 'transform .5s',
 			});
 	});
-
+	// $('.settings').slideToggle().slideToggle();
+	// $('span.tools').css({
+	// 			'transform': 'rotate(90deg)',
+	// 			'background-position': '0px -20px',
+	// 			'transition': 'transform .5s',
+	// 		});
+	// $('span.tools').css({
+	// 			// 'transform': 'rotate(0deg)',
+	// 			// 'background-position': '0px 0px',
+	// 			'transition': 'transform .5s',
+	// 		});
 
 
 	// функционал wi-fi
