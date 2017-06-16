@@ -144,15 +144,15 @@ body {
 }
 
 .navigator li span.one {
-  background: url(../img/one-page.svg) 0px 0px no-repeat;
+  background: url(../img/one-page-3.svg) 0px 0px no-repeat;
 }
 
 .navigator li span.two {
-  background: url(../img/two-page.svg) 0px 0px no-repeat;
+  background: url(../img/two-page-3.svg) 0px 0px no-repeat;
 }
 
 .navigator li span.tree {
-  background: url(../img/tree-page.svg) 0px 0px no-repeat;
+  background: url(../img/tree-page-3.svg) 0px 0px no-repeat;
 }
 
 .page {
