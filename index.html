@@ -22,9 +22,11 @@
 			<input type="range" min="-1" max="1" step="1" value="0">
 			<p>Опускать строки вниз:<input type="checkbox"></p>
 			<p>Скрывать строки:<input type="checkbox"></p>
+			<p>Скрывать записи:<input type="checkbox"></p>
 		</div>
 
 		<div class="content">
+
 			<ul class="navigator clearfix">
 				<li data-page="page1"><span class="one"></span></li>
 				<li data-page="page2"><span class="two"></span></li>
@@ -32,35 +34,66 @@
 			</ul>
 
 			<div class="page1 page">
-				<ul class="display clearfix">
-					<li><span class="shop"></span></li>
-					<li><span class="money"></span></li>
-					<li><span class="file"></span></li>
-				</ul>
-				<textarea data-page="page1"></textarea>
-				<table></table>
-			</div>
+				<div class="main">
+					<ul class="display clearfix">
+						<li><span class="shop"></span></li>
+						<li><span class="money"></span></li>
+						<li><span class="file"></span></li>
+					</ul>
+					<textarea data-page="page1"></textarea>
+					<table></table>
+				</div><!-- main -->
+				<div class="footer">
+					<div class="note">
+						<p>Первая запись очень длинная эта первая запись</p>
+						<p>Вторая запись очень длинная эта первая запись</p>
+						<p>Третья запись</p>
+						<p>Четвертая запись</p>
+						<p>Пятая запись</p>
+					</div>
+					<textarea data-page="page1"></textarea>
+				</div><!-- footer -->
+			</div><!-- page1 -->
 
 			<div class="page2 page">
-				<ul class="display clearfix">
-					<li><span class="shop"></span></li>
-					<li><span class="money"></span></li>
-					<li><span class="file"></span></li>
-				</ul>
-				<textarea data-page="page2"></textarea>
-				<table></table>
-			</div>
+				<div class="main">
+					<ul class="display clearfix">
+						<li><span class="shop"></span></li>
+						<li><span class="money"></span></li>
+						<li><span class="file"></span></li>
+					</ul>
+					<textarea data-page="page2"></textarea>
+					<table></table>
+				</div><!-- main -->
+				<div class="footer">
+					<div class="note">
+						<p>Первая запись</p>
+						<p>Вторая запись</p>
+						<p>Третья запись</p>
+					</div>
+					<textarea data-page="page2"></textarea>
+				</div><!-- footer -->
+			</div><!-- page2 -->
 
 			<div class="page3 page">
-				<ul class="display clearfix">
-					<li><span class="shop"></span></li>
-					<li><span class="money"></span></li>
-					<li><span class="file"></span></li>
-				</ul>
-				<textarea data-page="page3"></textarea>
-				<table></table>
-			</div>
-		</div>
+				<div class="main">
+					<ul class="display clearfix">
+						<li><span class="shop"></span></li>
+						<li><span class="money"></span></li>
+						<li><span class="file"></span></li>
+					</ul>
+					<textarea data-page="page3"></textarea>
+					<table></table>
+				</div><!-- main -->
+				<div class="footer">
+					<div class="note">
+						<p>Первая запись</p>
+					</div>
+					<textarea data-page="page3"></textarea>
+				</div><!-- footer -->
+			</div><!-- page3 -->
+
+		</div><!-- content -->
 		
 
 	</div>
