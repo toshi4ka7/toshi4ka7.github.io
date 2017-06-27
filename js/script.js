@@ -16,17 +16,7 @@ $(function() {
 				'transition': 'transform .5s',
 			});
 	});
-	// $('.settings').slideToggle().slideToggle();
-	// $('span.tools').css({
-	// 			'transform': 'rotate(90deg)',
-	// 			'background-position': '0px -20px',
-	// 			'transition': 'transform .5s',
-	// 		});
-	// $('span.tools').css({
-	// 			// 'transform': 'rotate(0deg)',
-	// 			// 'background-position': '0px 0px',
-	// 			'transition': 'transform .5s',
-	// 		});
+	
 
 
 	// функционал wi-fi
@@ -50,7 +40,7 @@ $(function() {
 			$('.page').hide();
 			$('.' + $(this).data("page")).show();
 			localStorage.page = $(this).data("page");
-			$('.page textarea').css('display', 'none');
+			$('.main textarea').css('display', 'none');
 			$('.file').css('background-position', '0px 0px');
 			$('.navigator li span').css('background-position', '0px 0px');
 			$('span', this).css('background-position', '0px -35px');
@@ -65,18 +55,24 @@ $(function() {
 
 	// функция показа списка
 	$('span.file').click(function() {
-		$(this).closest('.page').children('textarea').slideToggle();
+		$(this).closest('.main').children('textarea').slideToggle();
 		if ($(this).css('background-position') == '0px 0px')
 			$(this).css('background-position', '0px -20px');
 		else
 			$(this).css('background-position', '0px 0px');
 	})
 
+	// функция показа textarea в note
+	$('.footer .note').click(function() {
+		$(this).hide();
+		$(this).closest('.footer').children('textarea').show();
+	})
+
 
 
 
 	/* Обновление приложения */
-	window.applicationCache.onchecking = function() {
+	/*window.applicationCache.onchecking = function() {
 		alert("Проверка наличия новой версии");
 		return false;
 	}
@@ -103,7 +99,9 @@ $(function() {
 	window.applicationCache.onobsolete = function() {
 		alert("Это приложение больше не кэшируется. Перезапустите его, чтобы получить последнюю версию из сети");
 		return false;
-	}
+	}*/
+
+
 
 	/* Работа приложения */
 
@@ -113,9 +111,14 @@ $(function() {
 	var preferences = {
 		'range': '-1',
 		'sort': true,
-		'visibel': true,  
+		'visibel': true,
+		'note': true,  
 	}
-
+	var note = {
+		'page1': '',
+		'page2': '',
+		'page3': '',
+	}
 	var goods = {
 		page1: {
 			'товар1': '3,0',
@@ -144,10 +147,14 @@ $(function() {
 		preferences = JSON.parse(localStorage.preferences);
 	if ('goods' in localStorage)
 		goods = JSON.parse(localStorage.goods);
+	if ('note' in localStorage)
+		note = JSON.parse(localStorage.note);
+
 
 	$('input[type="range"]').val(preferences.range);
 	$('input[type="checkbox"]:eq(0)').get(0).checked = preferences.sort;
 	$('input[type="checkbox"]:eq(1)').get(0).checked = preferences.visibel;
+	$('input[type="checkbox"]:eq(2)').get(0).checked = preferences.note;
 
 	goods_textarea('page1');
 	goods_textarea('page2');
@@ -161,9 +168,26 @@ $(function() {
 	sort_rows();
 	display_rows();
 
+	note_textarea('page1');
+	note_textarea('page2');
+	note_textarea('page3');
+	note_div('page1');
+	note_div('page2');
+	note_div('page3');
+	display_note();
 
 
-	$('textarea').change(function() {
+	$('.footer textarea').change(function() {
+		var page = $(this).data("page");
+		textarea_note(page);
+		note_textarea(page);
+		note_div(page);
+		$(this).hide();
+		$(this).closest('.footer').children('.note').show();
+
+	})
+
+	$('.main textarea').change(function() {
 		var page = $(this).data("page");
 		textarea_goods(page);
 		goods_textarea(page);
@@ -190,6 +214,12 @@ $(function() {
 		preferences.visibel = this.checked;
 		localStorage.preferences = JSON.stringify(preferences);
 		display_rows();
+	})
+
+	$('input[type="checkbox"]:eq(2)').change(function() {
+		preferences.note = this.checked;
+		localStorage.preferences = JSON.stringify(preferences);
+		display_note();	
 	})
 
 	function display_rows() {
@@ -259,7 +289,7 @@ $(function() {
 	};
 
 	function goods_textarea(page) {
-		var text = $('.' + page + ' textarea');
+		var text = $('.' + page + ' .main textarea');
 		var str = "";
 		for (name in goods[page])
 			str += name + " - " + goods[page][name] + "\n";
@@ -283,7 +313,7 @@ $(function() {
 	};
 
 	function textarea_goods(page) { 
-		var text = $('.' + page + ' textarea');
+		var text = $('.' + page + ' .main textarea');
 		var arr = text.val().split("\n");
 		goods[page] = {};
 		for (i = 0; i < arr.length; i++) {
@@ -295,8 +325,38 @@ $(function() {
 		}
 	};
 
-	
 
-
+	function textarea_note(page) { 
+		var text = $('.' + page + ' .footer textarea');
+		note[page] = text.val();
+		localStorage.note = JSON.stringify(note);
+	};
 	
+	function note_textarea(page) {
+		var text = $('.' + page + ' .footer textarea');
+		text.val(note[page]);
+	};
+
+	function note_div(page) {
+		var div = $('.' + page + ' .note');
+		div.html('');
+		var arr = note[page].split("\n");
+		for (i = 0; i < arr.length; i++) {
+			var p = $('<p>').text(arr[i].trim());
+			div.append(p);
+		}
+		if (div.text() == '')
+			div.html('<p>Записей нет<p>');
+	}
+
+	function display_note() {
+		if ($('input[type="checkbox"]:eq(2)').get(0).checked == true)
+			$('.footer').hide();
+		else {
+			$('.footer').show();
+			$('.footer .note').show();
+			$('.footer textarea').hide();
+		}
+	}
+
 });
